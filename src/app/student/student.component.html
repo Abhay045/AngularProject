@@ -1,0 +1,61 @@
+<form class="form" [formGroup]="userForm">
+    <div class="custom">
+        Student Name
+        <input type="text" placeholder="Enter Name" formControlName="name">
+
+
+        <span class="alert" *ngIf="name.invalid && (name.dirty || name.touched)">
+
+            <span style="color: red;" *ngIf="name.errors?.['required']">
+                *Name is required.
+            </span>
+            <span style="color: red;" *ngIf="name.errors?.['minlength']">
+                *Name must be at least 3 characters long.
+            </span>
+        </span>
+
+        <br>
+        Student Id
+        <input type="text" placeholder="Enter Id" formControlName="id">
+        <span class="alert" *ngIf="id && id.invalid && id.touched">*ID is required.</span>
+
+        <br>
+        Student Course
+        <input type="text" placeholder="Enter Course" formControlName="course">
+        <span class="alert" *ngIf="course && course.invalid && course.touched">*Course is required.</span>
+
+        <br>
+        Student Number
+        <input type="text" placeholder="Enter Number" formControlName="number">
+        <span  *ngIf="number.invalid && (number.dirty || number.touched)">
+
+            <span class="alert" *ngIf="number.errors?.['pattern']">*Characters not allow.</span>
+            <span class="alert" *ngIf="number.errors?.['required']">*Number is Required</span>
+        </span>
+
+
+        <br><button (click)="addItem()" [disabled]="userForm.invalid">Add</button>
+        <button (click)="reset()">Reset</button>
+    </div>
+</form>
+
+<div class="tbl">
+    <table>
+        <tr>
+            <th>Student Name</th>
+            <th>Student Id</th>
+            <th>Student Course</th>
+            <th>Student Number</th>
+
+        </tr>
+        <tbody>
+            <tr *ngFor="let student of studentData">
+                <td>{{student.name}}</td>
+                <td>{{student.id}}</td>
+                <td>{{student.course}}</td>
+                <td>{{student.number}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

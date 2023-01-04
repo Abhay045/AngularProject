@@ -1,0 +1,44 @@
+.form
+{
+    background-color:antiquewhite;
+    padding:50px;
+    text-align: left;
+    width: 300px;
+}
+button{
+    background-color:yellowgreen;
+    margin: 10px;
+    border: 3px solid rgb(150, 113, 101) ;
+    border-radius: 10px;
+    color: rgb(23, 6, 2);
+    font-family:monospace;
+}
+input{
+    border: 3px groove black;
+    border-radius: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+
+}
+table,th,td{
+    border: 1px solid rgb(2, 1, 1);
+}
+.tbl{
+    margin: 20px;
+    
+}
+th,td{
+    padding: 10px;
+}
+table{
+    background-color: azure;
+}
+
+.alert{
+    width: 100%;
+    font-size: 1.2ch;
+    color: red;
+    display: inline-block;
+    padding-bottom: 15px;
+    margin-top: -20px;
+  }
